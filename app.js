@@ -1,5 +1,13 @@
-const express = require('express')
+import  express from 'express'
+import sequelize from './config/dbConn.js'
 const app = express()
+app.use(express.json())
 const port = 3000
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+sequelize.sync().then(() => {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  });
