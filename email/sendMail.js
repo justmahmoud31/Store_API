@@ -23,7 +23,7 @@ jwt.sign( {email} ,'Nouran', async(err,token)=>{
    user.otpExp = new Date(Date.now() + 10 * 60000) ;
      await user.save() 
   const info = await transporter.sendMail({
-    from: `Nouran 🎀 " <$nouranmohsen720@gmail.com>`, // sender address
+    from: `Nouran 🎀 " <$process.env.EMAIL>`, // sender address
     to: email, // list of receivers
     subject: "Hello ", // Subject line
      //html: "<b>Hello world?</b>"
