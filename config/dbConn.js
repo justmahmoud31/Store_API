@@ -5,7 +5,7 @@ const sequelize = new Sequelize('store-api','root','',{
     dialect : 'mysql',
     port: 3307
      
-})
+});
 
 //auth to db
 sequelize.authenticate()
@@ -13,4 +13,4 @@ sequelize.authenticate()
 .catch((err)=> console.log(err));
 
 
-export default sequelize
+export default sequelize;
