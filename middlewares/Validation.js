@@ -1,8 +1,5 @@
 import joi from 'joi'
 import { AppError } from "../utils/appError.js"; 
-
-
-
 export const generalFields= {
     name:joi.string(),
     colors:joi.custom(parseArray),
